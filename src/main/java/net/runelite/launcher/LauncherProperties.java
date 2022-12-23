@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LauncherProperties
 {
-	private static final String LAUNCHER_VERSION = "runelite.launcher.version";
+	private static final String LAUNCHER_VERSION = "runelite.launcher.version.overridden";
 	private static final String DISCORD_INVITE = "runelite.discord.invite";
 	private static final String TROUBLESHOOTING_LINK = "runelite.wiki.troubleshooting.link";
 	private static final String DNS_CHANGE_LINK = "runelite.dnschange.link";
