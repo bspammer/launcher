@@ -249,6 +249,7 @@ public class Launcher
 			// Set hs_err_pid location. This is a jvm param and can't be set at runtime.
 			log.debug("Setting JVM crash log location to {}", CRASH_FILES);
 			jvmParams.add("-XX:ErrorFile=" + CRASH_FILES.getAbsolutePath());
+			jvmParams.add("-ea");
 
 			if (insecureSkipTlsVerification)
 			{
