@@ -116,7 +116,7 @@ public class Launcher
 		parser.accepts("insecure-skip-tls-verification", "Disable TLS certificate and hostname verification");
 		parser.accepts("use-jre-truststore", "Use JRE cacerts truststore instead of the Windows Trusted Root Certificate Authorities (only on Windows)");
 		parser.accepts("scale", "Custom scale factor for Java 2D").withRequiredArg();
-		parser.accepts("noupdate", "Skips the launcher self-update (Windows only)");
+		parser.accepts("noupdate", "Skips the launcher self-update");
 		parser.accepts("help", "Show this text (use --clientargs --help for client help)").forHelp();
 		parser.accepts("classpath", "Classpath for the client").withRequiredArg();
 
@@ -204,7 +204,7 @@ public class Launcher
 				var classpathOpt = String.valueOf(options.valueOf("classpath"));
 				var classpath = Streams.stream(Splitter.on(File.pathSeparatorChar)
 					.split(classpathOpt))
-					.map(File::new)
+					.map(name -> new File(REPO_DIR, name))
 					.collect(Collectors.toList());
 				try
 				{
