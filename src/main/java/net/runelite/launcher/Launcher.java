@@ -409,7 +409,6 @@ public class Launcher
 			jvmParams.add("-XX:ErrorFile=" + CRASH_FILES.getAbsolutePath());
 			// Add VM args from cli/env
 			jvmParams.addAll(getJvmArgs(options));
-			jvmParams.add("-ea");
 
 			if (launchMode == LaunchMode.REFLECT)
 			{
