@@ -10,3 +10,8 @@ project.properties
 .classpath
 dependency-reduced-pom.xml
 RuneLiteSetup*.exe
+
+OpenJDK*
+native-osx-aarch64/
+osx-aarch64-jdk/
+packr*
