@@ -33,7 +33,9 @@ Source: "${basedir}\native-win32\jre\*"; DestDir: "{app}\jre"; Flags: recursesub
 
 [Icons]
 ; start menu
-Name: "{userprograms}\RuneLite"; Filename: "{app}\RuneLite.exe"
+Name: "{userprograms}\RuneLite\RuneLite"; Filename: "{app}\RuneLite.exe"
+Name: "{userprograms}\RuneLite\RuneLite (configure)"; Filename: "{app}\RuneLite.exe"; Parameters: "--configure"
+Name: "{userprograms}\RuneLite\RuneLite (safe mode)"; Filename: "{app}\RuneLite.exe"; Parameters: "--safe-mode"
 Name: "{userdesktop}\RuneLite"; Filename: "{app}\RuneLite.exe"; Tasks: DesktopIcon
 
 [Run]
@@ -43,6 +45,8 @@ Filename: "{app}\RuneLite.exe"; Description: "&Open RuneLite"; Flags: postinstal
 [InstallDelete]
 ; Delete the old jvm so it doesn't try to load old stuff with the new vm and crash
 Type: filesandordirs; Name: "{app}\jre"
+; previous shortcut
+Type: files; Name: "{userprograms}\RuneLite.lnk"
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{%USERPROFILE}\.runelite\repository2"
